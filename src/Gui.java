@@ -7,6 +7,6 @@ public class Gui {
         new Gui();
     }
     public Gui(){
-
+        jFrame.pack();
     }
 }

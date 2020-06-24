@@ -39,4 +39,10 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="349" y="161" key="SettingsEditor" timestamp="1592956746058">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="349" y="161" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1592956746058" />
+  </component>
 </project>

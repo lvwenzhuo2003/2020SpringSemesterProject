@@ -3,3 +3,5 @@
 
 # Java production: 
 out/*
+temp/*
+.idea/*

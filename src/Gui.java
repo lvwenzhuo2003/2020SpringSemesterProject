@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,17 +8,18 @@ import java.util.ArrayList;
 
 public class Gui implements Serializable, ActionListener {
     private JFrame     jFrame            = new JFrame("New Session");
+    private JPanel     comboPanel        = new JPanel();
     private JPanel     northPanel        = new JPanel();
     private JPanel     southPanel        = new JPanel();
     private JPanel     eastPanel         = new JPanel();
     private JPanel     westPanel         = new JPanel();
     private JPanel     centerPanel       = new JPanel();
     private JLabel     title             = new JLabel("Welcome to use management system!");
-    private JMenuBar          jMenuBar      = new JMenuBar();
+    private JMenuBar   jMenuBar          = new JMenuBar();
     private JMenu      jMenu             = new JMenu();
-    private JTextArea amount            = new JTextArea();
-    private JTextArea productName       = new JTextArea();
-    private JTextArea customerName      = new JTextArea();
+    private JTextArea  amount            = new JTextArea();
+    private JTextArea  productName       = new JTextArea();
+    private JTextArea  customerName      = new JTextArea();
     private JButton    confirm           = new JButton();
     private JButton    records           = new JButton();
     private JLabel     productNameLabel  = new JLabel("Product Name: ");
@@ -30,35 +32,36 @@ public class Gui implements Serializable, ActionListener {
     }
 
     public Gui() {
-        //init window position
+        //jFrame.setLayout(new BorderLayout());
+        //comboPanel.setLayout(new BorderLayout());
+        //init
+        jFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+        jFrame.setSize(400,200);
+        comboPanel.setLayout(new BorderLayout(10,10));
+        //comboPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
         int windowWidth = jFrame.getWidth();
         int windowHeight = jFrame.getHeight();
         Toolkit kit = Toolkit.getDefaultToolkit();
         Dimension screenSize = kit.getScreenSize();
         int screenWidth = screenSize.width;
         int screenHeight = screenSize.height;
-
-        //init
-        jFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-        jFrame.setSize(400,200);
-        jFrame.setLayout(new BorderLayout());
-        //jFrame.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
         jFrame.setLocation(screenWidth / 2 - windowWidth / 2, screenHeight / 2 - windowHeight / 2);
 
         //set title(north)
-        northPanel.setLayout(new BorderLayout());
+        northPanel.setLayout(new BorderLayout(10,10));
         northPanel.add(title,BorderLayout.CENTER);
 
         //set textfields(west)
-        westPanel.setLayout(new BorderLayout());
+        westPanel.setLayout(new BorderLayout(10,10));
         productName.setLineWrap(false);
         amount.setLineWrap(false);
-        ;
+
         westPanel.add(productName,BorderLayout.NORTH);
         westPanel.add(amount,BorderLayout.CENTER);
         westPanel.add(customerName,BorderLayout.SOUTH);
 
         //set textfield titles(east)
+        eastPanel.setLayout(new BorderLayout(10,10));
         eastPanel.add(productNameLabel,BorderLayout.NORTH);
         eastPanel.add(amountLabel,BorderLayout.CENTER);
         eastPanel.add(customerNameLabel,BorderLayout.SOUTH);
@@ -66,20 +69,21 @@ public class Gui implements Serializable, ActionListener {
         //set buttons(south)
         confirm.addActionListener(this);
         records.addActionListener(this);
-        southPanel.setLayout(new BorderLayout());
+        southPanel.setLayout(new BorderLayout(10,10));
         southPanel.add(confirm,BorderLayout.WEST);
         southPanel.add(records,BorderLayout.EAST);
 
         //pack up and show
-        jFrame.add(northPanel,BorderLayout.NORTH);
-        jFrame.add(westPanel,BorderLayout.WEST);
-        jFrame.add(eastPanel,BorderLayout.EAST);
-        jFrame.add(southPanel,BorderLayout.SOUTH);
-        jFrame.setLayout(new BorderLayout());
+        comboPanel.add(northPanel,BorderLayout.NORTH);
+        comboPanel.add(westPanel,BorderLayout.WEST);
+        comboPanel.add(eastPanel,BorderLayout.EAST);
+        comboPanel.add(southPanel,BorderLayout.SOUTH);
+        //comboPanel.setLayout(new BorderLayout());
         //jFrame.setLayout(new BorderLayout());
         //jFrame.add(jFrame,BorderLayout.CENTER);
+        jFrame.add(comboPanel);
         jFrame.setVisible(true);
-        //jFrame.pack();
+        jFrame.pack();
     }
 
     public ArrayList<Order> read() {

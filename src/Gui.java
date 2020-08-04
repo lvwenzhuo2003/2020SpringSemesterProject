@@ -1,5 +1,4 @@
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,24 +6,24 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class Gui implements Serializable, ActionListener {
-    private JFrame     jFrame            = new JFrame("New Session");
-    private JPanel     comboPanel        = new JPanel();
-    private JPanel     northPanel        = new JPanel();
-    private JPanel     southPanel        = new JPanel();
-    private JPanel     eastPanel         = new JPanel();
-    private JPanel     westPanel         = new JPanel();
-    private JPanel     centerPanel       = new JPanel();
-    private JLabel     title             = new JLabel("Welcome to use management system!");
-    private JMenuBar   jMenuBar          = new JMenuBar();
-    private JMenu      jMenu             = new JMenu();
-    private JTextArea  amount            = new JTextArea();
-    private JTextArea  productName       = new JTextArea();
-    private JTextArea  customerName      = new JTextArea();
-    private JButton    confirm           = new JButton();
-    private JButton    records           = new JButton();
-    private JLabel     productNameLabel  = new JLabel("Product Name: ");
-    private JLabel     amountLabel       = new JLabel("Amount: ");
-    private JLabel     customerNameLabel = new JLabel("Customer Name: ");
+    private final JFrame jFrame = new JFrame("New Session");
+    private final JPanel comboPanel = new JPanel();
+    private final JPanel northPanel = new JPanel();
+    private final JPanel southPanel = new JPanel();
+    private final JPanel eastPanel = new JPanel();
+    private final JPanel westPanel = new JPanel();
+    private final JPanel centerPanel = new JPanel();
+    private final JLabel title = new JLabel("Welcome to use management system!");
+    private final JMenuBar jMenuBar = new JMenuBar();
+    private final JMenu jMenu = new JMenu();
+    private final JTextArea amount = new JTextArea();
+    private final JTextArea productName = new JTextArea();
+    private final JTextArea customerName = new JTextArea();
+    private final JButton confirm = new JButton();
+    private final JButton records = new JButton();
+    private final JLabel productNameLabel = new JLabel("Product Name: ");
+    private final JLabel amountLabel = new JLabel("Amount: ");
+    private final JLabel customerNameLabel = new JLabel("Customer Name: ");
     ArrayList<Order> record = read();
 
     public static void main(String[] args) {

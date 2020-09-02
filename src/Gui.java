@@ -12,10 +12,7 @@ public class Gui implements Serializable, ActionListener {
     private final JPanel southPanel = new JPanel();
     private final JPanel eastPanel = new JPanel();
     private final JPanel westPanel = new JPanel();
-    private final JPanel centerPanel = new JPanel();
     private final JLabel title = new JLabel("Welcome to use management system!");
-    private final JMenuBar jMenuBar = new JMenuBar();
-    private final JMenu jMenu = new JMenu();
     private final JTextArea amount = new JTextArea();
     private final JTextArea productName = new JTextArea();
     private final JTextArea customerName = new JTextArea();

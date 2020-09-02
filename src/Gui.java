@@ -31,13 +31,9 @@ public class Gui implements Serializable, ActionListener {
     }
 
     public Gui() {
-        //jFrame.setLayout(new BorderLayout());
-        //comboPanel.setLayout(new BorderLayout());
-        //init
         jFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
         jFrame.setSize(400,200);
         comboPanel.setLayout(new BorderLayout(10,10));
-        //comboPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 0));
         int windowWidth = jFrame.getWidth();
         int windowHeight = jFrame.getHeight();
         Toolkit kit = Toolkit.getDefaultToolkit();
@@ -77,9 +73,6 @@ public class Gui implements Serializable, ActionListener {
         comboPanel.add(westPanel,BorderLayout.WEST);
         comboPanel.add(eastPanel,BorderLayout.EAST);
         comboPanel.add(southPanel,BorderLayout.SOUTH);
-        //comboPanel.setLayout(new BorderLayout());
-        //jFrame.setLayout(new BorderLayout());
-        //jFrame.add(jFrame,BorderLayout.CENTER);
         jFrame.add(comboPanel);
         jFrame.setVisible(true);
         jFrame.pack();

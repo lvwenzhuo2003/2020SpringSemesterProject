@@ -40,6 +40,7 @@ public class Gui implements Serializable, ActionListener {
 
     public static void main(String[] args) {
         new Gui();
+        System.exit(0);
     }
 
     public Gui() {
@@ -101,7 +102,9 @@ public class Gui implements Serializable, ActionListener {
         } catch (FileNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "File not found");
         } catch (IOException ex) {
+            JOptionPane.showMessageDialog(null, "The Application was broken, please consider repair it");
             ex.printStackTrace();
+            //System.exit(1);
         } catch (ClassNotFoundException ex) {
             JOptionPane.showMessageDialog(null, "Records not found");
             ex.printStackTrace();
@@ -112,14 +115,19 @@ public class Gui implements Serializable, ActionListener {
     public void write(ArrayList<Order> record) {
         try {
             ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream("./temp/record.ser"));
-            out.writeObject(record);
+            for (Order temporary:record) {
+                out.writeObject(temporary);
+            }
             out.close();
             JOptionPane.showMessageDialog(null, "Serialized data write successfully!");
         } catch (IOException exp) {
             JOptionPane.showMessageDialog(null, "Internal error. ");
+            exp.printStackTrace();
+            System.exit(1);
         } catch (NumberFormatException exp) {
             JOptionPane.showMessageDialog(null, "Incorrect input type! ");
         }
+        return;
     }
 
     /**
@@ -136,5 +144,6 @@ public class Gui implements Serializable, ActionListener {
         } else if (e.getSource() == records) {
             jFrame.setVisible(false);
         }
+        return;
     }
 }

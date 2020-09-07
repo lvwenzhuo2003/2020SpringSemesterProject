@@ -1,4 +1,4 @@
-public class Order {
+public class Order implements java.io.Serializable {
     private final String productType;
     private final int    amount;
     private final String customerName;

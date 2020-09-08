@@ -47,7 +47,7 @@ public class Gui_Rewrite implements ActionListener {
         new Gui_Rewrite();
     }
 
-    @SuppressWarnings("all")
+
     private Gui_Rewrite(){
         try {
             record = read();

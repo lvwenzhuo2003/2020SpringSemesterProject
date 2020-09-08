@@ -90,7 +90,8 @@ public class Gui_Rewrite implements ActionListener {
         recordingFrame.setLayout(new BorderLayout());
         int recordingWindowWidth = jFrame.getWidth();
         int recordingWindowHeight = jFrame.getHeight();
-        recordingFrame.setLocation(screenWidth / 2 - recordingWindowWidth / 2, screenHeight / 2 - recordingWindowHeight / 2);
+        recordingFrame.setLocation(screenWidth / 2 - recordingWindowWidth / 2, screenHeight / 2 -
+                recordingWindowHeight / 2);
 
         //set recording north panel: title
         setRecordingNorthPanel();
@@ -213,7 +214,8 @@ public class Gui_Rewrite implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == confirmAddRecordButton) {
             try {
-                record.add(new Order(productNameInput.getText(), Integer.parseInt(productAmountInput.getText()), customerNameInput.getText()));
+                record.add(new Order(productNameInput.getText(), Integer.parseInt(productAmountInput.getText()),
+                        customerNameInput.getText()));
                 write(record);
                 JOptionPane.showMessageDialog(null, "Successfully saved file. ");
                 productAmountInput.setText("");

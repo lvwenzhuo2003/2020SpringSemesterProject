@@ -125,7 +125,7 @@ public class Gui_Rewrite implements ActionListener {
 
     private void setRecordingCenterPanel(){
         recordingCenterPanel.setLayout(new BorderLayout());
-        recordingShowTextArea.append("Product Type\tAmount\tCustomer Name\n");
+        recordingShowTextArea.append("Product Type\tAmount\tCustomer Name\n\n");
         for (Order order : record) {
             for (int j = 0; j < 3; j++) {
                 if (j == 0) {
